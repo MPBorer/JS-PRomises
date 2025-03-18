@@ -27,7 +27,7 @@ const videoRef = document.querySelector(`.video`)
 
 function getSubscriptionStatus() {
     return new Promise ((resolve, reject) => {
-        resolve(`vip`)
+        resolve(`free`)
     })
 }
 
@@ -54,12 +54,15 @@ function getVideo(subscriptionStatus){
 async function main1(){
     const status = (await getSubscriptionStatus())
     statusRef.innerHTML = status
+   
     try {
         console.log(await getVideo(status))
+        videoRef.innerHTML = await getVideo(status)
     }
     catch (e) {
         console.log(e)
         videoRef.innerHTML = e
+
     }
 }
 main1()
