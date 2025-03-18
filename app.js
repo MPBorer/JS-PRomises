@@ -23,11 +23,11 @@ main()
 
 
 const statusRef = document.querySelector(`.status`)
-const videoRef = document.querySelector(`video`)
+const videoRef = document.querySelector(`.video`)
 
 function getSubscriptionStatus() {
     return new Promise ((resolve, reject) => {
-        resolve(``)
+        resolve(`vip`)
     })
 }
 
